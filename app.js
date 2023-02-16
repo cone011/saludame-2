@@ -3,7 +3,7 @@ const app = express();
 
 app.get("/makers/:nombre", (req, res) => {
   let nombre = req.params.nombre ? req.params.nombre : null;
-  nombre[0] = nombre[0].toUpperCase();
+  nombre = nombre.charAt(0).toUpperCase() + nombre.slice(1);
   res.send(`<h1>Hola ${nombre}!</h1>`);
 });
 
